@@ -18,6 +18,35 @@ app.get("/api/subjects", (request, response) => {
   });
 });
 
+app.get("/api/questions/:subjectId", (request, response) => {
+  const { subjectId } = request.params;
+
+  if (!subjectId || subjectId !== "1") {
+    return response.status(400).json({ error: "SUBJECT_ID_MISSING_OR_INVALID" });
+  }
+
+  return response.status(200).json({
+    resourceName: "GET-QUESTIONS-BY-SUBJECT",
+    data: [
+      {
+        question: "1+1",
+        correct_answer: "2",
+        points: 150,
+      },
+      {
+        question: "2+2",
+        correct_answer: "4",
+        points: 150,
+      },
+      {
+        question: "3+3",
+        correct_answer: "6",
+        points: 150,
+      },
+    ],
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
