@@ -34,16 +34,19 @@ app.get("/api/subject/:subjectId/questions", (request, response) => {
       {
         question: "1+1",
         correct_answer: "2",
+        choices: ['1', '2', '3', '4'],
         points: 150,
       },
       {
         question: "2+2",
         correct_answer: "4",
+        choices: ['1', '2', '3', '4'],
         points: 150,
       },
       {
         question: "3+3",
         correct_answer: "6",
+        choices: ['1', '2', '3', '4'],
         points: 150,
       },
     ],
