@@ -1,11 +1,14 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const cors = require('cors')
 const { getUserProfile } = require("./controllers/users.js");
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors())
 
 app.get("/api/healthcheck", (request, response) => {
   return response.status(200).json({ status: "online" });
