@@ -18,7 +18,7 @@ app.get("/api/subjects", (request, response) => {
   });
 });
 
-app.get("/api/questions/:subjectId", (request, response) => {
+app.get("/api/subject/:subjectId/questions", (request, response) => {
   const { subjectId } = request.params;
 
   if (!subjectId || subjectId !== "1") {
